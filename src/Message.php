@@ -296,7 +296,9 @@ class Message {
 
         $instance->parseRawHeader($raw_header);
         $instance->parseRawFlags($raw_flags);
-        $instance->parseRawBody($raw_body);
+        if($raw_body != ''){
+            $instance->parseRawBody($raw_body);
+        }
         $instance->peek();
 
         return $instance;
